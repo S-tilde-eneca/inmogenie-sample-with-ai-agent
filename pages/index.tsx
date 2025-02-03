@@ -19,16 +19,11 @@ export default function App() {
   
   const cards: Card[] = cardsData.cards;
 
-  const handleChatClick = () => {
-    // Aquí puedes añadir la lógica para abrir el chat
-    console.log('Chat clicked');
-  };
-
   return (
     <div className="app-container">
       <header className="header">
         <div className="welcome-container">
-          <h1>Bienvenido, {user?.signInDetails?.loginId || 'Usuario'}</h1>
+          <h1>Imnogenie</h1>
           <button onClick={signOut} className="sign-out-button">
             Cerrar sesión
           </button>
@@ -44,7 +39,7 @@ export default function App() {
           ))}
         </div>
       </main>
-      <ChatButton onClick={handleChatClick} />
+      <ChatButton />
     </div>
   );
 }
