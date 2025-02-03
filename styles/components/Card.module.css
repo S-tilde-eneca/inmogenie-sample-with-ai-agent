@@ -1,0 +1,16 @@
+.card {
+  flex: 0 0 auto;
+  width: calc(33.33% - 1.34rem);
+  height: 400px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(106, 6, 250, 0.1);
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+/* ... resto de los estilos específicos de la tarjeta */ 

@@ -1,50 +1,45 @@
-import { useState, useEffect } from "react";
 import { generateClient } from "aws-amplify/data";
 import type { Schema } from "@/amplify/data/resource";
 import { useAuthenticator } from "@aws-amplify/ui-react";
+import Card from '@/components/Card';
+import cardsData from '@/data/cards.json';
+import ChatButton from "@/components/ChatButton";
+
 const client = generateClient<Schema>();
 
+interface Card {
+  image: string;
+  title: string;
+  description: string;
+  link: string;
+}
+
 export default function App() {
-  const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
   const { user, signOut } = useAuthenticator();
-
-  function listTodos() {
-    client.models.Todo.observeQuery().subscribe({
-      next: (data) => setTodos([...data.items]),
-    });
-  }
-
-  function deleteTodo(id: string) {
-    client.models.Todo.delete({ id })
-  }
-
-  useEffect(() => {
-    listTodos();
-  }, []);
-
-  function createTodo() {
-    client.models.Todo.create({
-      content: window.prompt("Todo content"),
-    });
-  }
+  
+  const cards: Card[] = cardsData.cards;
 
   return (
-    <main>
-      <h1>{user?.signInDetails?.loginId}</h1>
-      <button onClick={createTodo}>+ new</button>
-      <ul>
-        {todos.map((todo) => (
-          <li onClick={() => deleteTodo(todo.id)} key={todo.id}>{todo.content}</li>
-        ))}
-      </ul>
-      <div>
-        🥳 App successfully hosted. Try creating a new todo.
-        <br />
-        <a href="https://docs.amplify.aws/gen2/start/quickstart/nextjs-pages-router/">
-          Review next steps of this tutorial.
-        </a>
-      </div>
-      <button onClick={signOut}>Sign out</button>
-    </main>
+    <div className="app-container">
+      <header className="header">
+        <div className="welcome-container">
+          <h1>Imnogenie</h1>
+          <button onClick={signOut} className="sign-out-button">
+            Cerrar sesión
+          </button>
+        </div>
+      </header>
+      <main>
+        <div className="cards-container">
+          {cards.map((card, index) => (
+            <Card
+              key={index}
+              {...card}
+            />
+          ))}
+        </div>
+      </main>
+      <ChatButton />
+    </div>
   );
 }

@@ -1,0 +1,40 @@
+{
+  "cards": [
+    {
+      "image": "/habi-logo.png",
+      "title": "Cómo revolucionar la atención médica",
+      "description": "Descubre las últimas innovaciones en el campo de la salud digital",
+      "link": "/articulo-1"
+    },
+    {
+      "image": "/habi-logo.png",
+      "title": "El futuro de la tecnología médica",
+      "description": "Nuevas soluciones para mejorar la atención al paciente",
+      "link": "/articulo-2"
+    },
+    {
+      "image": "/habi-logo.png",
+      "title": "Ingeniería y prototipos",
+      "description": "Cómo la ingeniería está transformando los servicios de salud",
+      "link": "/articulo-3"
+    },
+    {
+      "image": "/habi-logo.png",
+      "title": "Ingeniería y prototipos",
+      "description": "Cómo la ingeniería está transformando los servicios de salud",
+      "link": "/articulo-3"
+    },
+    {
+      "image": "/habi-logo.png",
+      "title": "Ingeniería y prototipos",
+      "description": "Cómo la ingeniería está transformando los servicios de salud",
+      "link": "/articulo-3"
+    },
+    {
+      "image": "/habi-logo.png",
+      "title": "Ingeniería y prototipos",
+      "description": "Cómo la ingeniería está transformando los servicios de salud",
+      "link": "/articulo-3"
+    }
+  ]
+} 
